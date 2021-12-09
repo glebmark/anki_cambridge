@@ -103,10 +103,10 @@ def create_templates(collection):
     template_Recall = collection.models.newTemplate('Recall')
     template_Recall['qfmt'] = styles.std_def
     template_Recall['afmt'] = styles.std_def_word_sound
-    template_Sound = collection.models.newTemplate('Sound')
-    template_Sound['qfmt'] = styles.std_sound
-    template_Sound['afmt'] = styles.std_sound_word_def
-    return (template_Recognition, template_Recall, template_Sound)
+#    template_Sound = collection.models.newTemplate('Sound')
+#    template_Sound['qfmt'] = styles.std_sound
+#    template_Sound['afmt'] = styles.std_sound_word_def
+    return (template_Recognition, template_Recall)
 
 def create_new_model(collection, fields, model_css):
     model = collection.models.new(CAMBRIDGE_MODEL)
@@ -115,10 +115,10 @@ def create_new_model(collection, fields, model_css):
     #model['css'] = model_css
     for field in fields:
         collection.models.addField(model, collection.models.newField(field))
-    template_Recognition, template_Recall, template_Sound = create_templates(collection)
+    template_Recognition, template_Recall = create_templates(collection)
     collection.models.addTemplate(model, template_Recognition)
     collection.models.addTemplate(model, template_Recall)
-    collection.models.addTemplate(model, template_Sound)
+#    collection.models.addTemplate(model, template_Sound)
     model['id'] = randint(100000, 1000000)  # Essential for upgrade detection
     collection.models.update(model)
     return model
