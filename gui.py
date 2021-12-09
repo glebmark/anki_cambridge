@@ -73,7 +73,7 @@ class LinkDialogue(QDialog):
 
     def get_word_definitions_from_link(self):
 
-        self.user_url = self.link_editor.text()
+        self.user_url = "https://dictionary.cambridge.org/dictionary/english/" + self.link_editor.text()
         if not self.user_url:
             QMessageBox.warning(mw,'Link is not provided','Please, provide a link for you word or phrase.')
             return
