@@ -165,9 +165,9 @@ class CDDownloader(QObject):
                         tag_l2_word_key = html_pos_body.find(attrs={'class': 'dsense_h'})
                         if not tag_l2_word_key:
                             continue
-                        general_m = self._prettify_string(tag_l2_word_key.get_text())
-                        word_to_add.word_general = general_m 
-                        l2_word[general_m] = None
+#                        general_m = self._prettify_string(tag_l2_word_key.get_text())
+#                        word_to_add.word_general = general_m 
+#                        l2_word[general_m] = None
                         l2_meaning_key = {}
                         l2_meaning_examples = []
                         l2_meaning = {}
@@ -200,10 +200,10 @@ class CDDownloader(QObject):
                             word_to_add.word_examples = examples
                             self.word_data.append(word_to_add)
                             word_to_add = copy.deepcopy(word_to_copy)
-                        l2_word[general_m] = l2_meaning
+#                        l2_word[general_m] = l2_meaning
                        
                     for html_pos_body in html_l2_tag.find_all(name='div', attrs={'class': 'pr','class': 'dsense','class':'dsense-noh'}):
-                        general_m = 'UNDEFINED' + str(suffix)
+                        general_m = ' ' + str(suffix)
                         word_to_add.word_general = ''
                         l2_word[general_m] = None
                         l2_meaning_key = {}
