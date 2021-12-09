@@ -96,7 +96,7 @@ class WordDefDialogue(QDialog):
         self.deletion_mark = False
         self.l2_def = None
         self.single_word = False
-        self.l2_meaning = l2_meaning
+#        self.l2_meaning = l2_meaning
         self.set_model()
         QDialog.__init__(self)
         self.initUI()
@@ -226,7 +226,7 @@ class WordDefDialogue(QDialog):
         word['Word'] = word_to_add['word_title'] 
         word['Grammar'] = word_to_add['word_gram']
         word['Pronunciation'] = word_to_add['word_pro_uk'] + ' ' + word_to_add['word_pro_us']
-        word['Meaning'] = word_to_add['word_general'] if not 'UNDEFINED' in word_to_add['word_general'] else ''
+#        word['Meaning'] = word_to_add['word_general'] if not 'UNDEFINED' in word_to_add['word_general'] else ''
         word['Definition'] = word_to_add['word_specific']
         word['Examples'] = word_to_add['word_examples']
         word['Sounds'] = [word_to_add['word_uk_media'],word_to_add['word_us_media']]
