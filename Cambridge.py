@@ -92,7 +92,7 @@ class CDDownloader(QObject):
 
         stop_further_parsing = False
 
-        for tag_cald4 in word_soup.find_all(name='div', attrs={'class': 'pr dictionary','data-id':['cald4','cbed','cacd','cald4-us']}):
+        for tag_cald4 in word_soup.find_all(name='div', attrs={'class': 'pr dictionary','data-id':['cald4']}):
             for tag_entry in tag_cald4.find_all(name='div', attrs={'class': ['pr entry-body__el','pr idiom-block','entry-body__el clrd js-share-holder']}):
                 word_to_add = word_entry()
                 tag_dict = tag_cald4.find(name='div',attrs={'class':'cid'})
